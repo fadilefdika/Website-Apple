@@ -1,17 +1,14 @@
-// Mengimpor hook dan modul yang dibutuhkan
 import { useRef, useState, useEffect } from 'react';
-import { hightlightsSlides } from '../constants'; // Daftar slide yang ditampilkan dalam carousel
-import { pauseImg, playImg, replayImg } from '../utils'; // Gambar ikon kontrol
-import { useGSAP } from '@gsap/react'; // Hook untuk menggunakan GSAP dengan React
-import gsap from 'gsap'; // Library animasi GSAP
+import { hightlightsSlides } from '../constants';
+import { pauseImg, playImg, replayImg } from '../utils';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
 
 const VideoCarousel = () => {
-  // Menggunakan useRef untuk menyimpan referensi video, span, dan div
   const videoRef = useRef([]);
   const videoSpanRef = useRef([]);
   const videoDivRef = useRef([]);
 
-  // Menggunakan useState untuk menyimpan state dari video carousel
   const [video, setVideo] = useState({
     isEnd: false, // Menunjukkan apakah video sudah selesai diputar
     startPlay: false, // Menunjukkan apakah video sudah mulai diputar
@@ -58,7 +55,7 @@ const VideoCarousel = () => {
     }
   }, [startPlay, videoId, isPlaying, loadedData]); // Menjalankan efek ketika state terkait berubah
 
-  // Fungsi untuk menangani metadata video yang telah dimuat
+  // Fungsi untuk menangani metadata(informasi) video yang telah dimuat (informasi yang diperlukan dalam parameter e)
   const handleLoadedMetadata = (i, e) => {
     SetLoadedData((prev) => [...prev, e]);
   };
@@ -118,7 +115,7 @@ const VideoCarousel = () => {
   const handleProcess = (type, i) => {
     switch (type) {
       case 'video-end':
-        setVideo((prevVideo) => ({ ...prevVideo, isEnd: true, videoId: i + 1 }));
+        setVideo((prev) => ({ ...prev, isEnd: true, videoId: i + 1 }));
         break;
       case 'video-last':
         setVideo((pre) => ({ ...pre, isLastVideo: true }));
