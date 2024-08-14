@@ -7,6 +7,9 @@ export default defineConfig({
   plugins: [react(), sentryVitePlugin({
     org: "fadil-gb",
     project: "website-apple"
+  }), sentryVitePlugin({
+    org: "fadil-gb",
+    project: "website-apple"
   })],
 
   build: {
