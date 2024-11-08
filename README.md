@@ -22,15 +22,14 @@ Currently, two official plugins are available for React:
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 # Getting Started
-To get started with this project locally, clone the repository and install the dependencies:
-- bash
-- Copy code
-- git clone https://github.com/your-username/your-repository-name.git
-- cd your-repository-name
-- npm install
-- Then, start the development server:
-
-- bash
-- Copy code
-- npm run dev
-This will start the Vite server and you can view the project at http://localhost:3000.
+To set up the project locally, follow these steps:
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/username/resepsaji-frontend.git
+   cd resepsaji-frontend
+2. Install the necessary dependencies:
+   ```bash
+   npm install
+3. Start the development server:
+   ```bash
+   npm start
